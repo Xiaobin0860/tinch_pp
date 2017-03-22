@@ -318,7 +318,7 @@ bool float_::match(msg_seq_iter& f, const msg_seq_iter& l) const
 atom::atom(const std::string& a_val)
   : val(a_val),
     to_assign(0),
-    match_fn(bind(match_atom_value, ::_1, ::_2, cref(val))) {}
+    match_fn(bind(match_atom_value, ::_1, ::_2, boost::cref(val))) {}
 
 atom::atom(std::string* a_to_assign)
   : to_assign(a_to_assign),
